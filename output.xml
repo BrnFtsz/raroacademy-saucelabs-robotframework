@@ -1,0 +1,217 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<robot generator="Robot 6.1.1 (Python 3.11.4 on win32)" generated="20240524 20:46:15.612" rpa="false" schemaversion="4">
+<suite id="s1" name="loginSaucelabsTest" source="c:\Raro Academy\AULA 4 APPIUM\Robot\android\features\loginSaucelabsTest.robot">
+<test id="s1-t1" name="CT002 - Adicionar um produto e verificar o carrinho" line="16">
+<kw name="Abrir App" library="config" type="SETUP">
+<kw name="Open Application" library="AppiumLibrary">
+<arg>http://127.0.0.1:4723</arg>
+<arg>automationName=${ANDROID_AUTOMATION_NAME}</arg>
+<arg>platformName=${ANDROID_PLATFORM_NAME}</arg>
+<arg>platformVersion=${ANDROID_PLATFORM_VERSION}</arg>
+<arg>appPackage=${APP_PACKAGE}</arg>
+<arg>appActivity=${APP_ACTIVITY}</arg>
+<doc>Opens a new application to given Appium server.
+Capabilities of appium server, Android and iOS,
+Please check https://github.com/appium/appium/blob/master/docs/en/writing-running-appium/server-args.md
+| *Option*            | *Man.* | *Description*     |
+| remote_url          | Yes    | Appium server url |
+| alias               | no     | alias             |
+| strict_ssl          | No     | allows you to send commands to an invalid certificate host like a self-signed one. |</doc>
+<status status="PASS" starttime="20240524 20:46:15.856" endtime="20240524 20:46:21.080"/>
+</kw>
+<status status="PASS" starttime="20240524 20:46:15.846" endtime="20240524 20:46:21.080"/>
+</kw>
+<kw name="Dado que visito um produto" library="sauceLabsPage">
+<kw name="Swipe By Percent" library="AppiumLibrary">
+<arg>0</arg>
+<arg>50</arg>
+<arg>0</arg>
+<arg>10</arg>
+<arg>1000</arg>
+<doc>Swipe from one percent of the screen to another percent, for an optional duration.
+Normal swipe fails to scale for different screen resolutions, this can be avoided using percent.</doc>
+<status status="PASS" starttime="20240524 20:46:21.081" endtime="20240524 20:46:22.439"/>
+</kw>
+<kw name="Espera o elemento e faz o clique" library="commons">
+<arg>${PRODUTO_CAMISETA}</arg>
+<kw name="Wait Until Element Is Visible" library="AppiumLibrary">
+<arg>${elemento}</arg>
+<doc>Waits until element specified with `locator` is visible.</doc>
+<msg timestamp="20240524 20:46:23.322" level="INFO">xpath criteria: //android.widget.TextView[@text="Test.allTheThings() T-Shirt"]</msg>
+<status status="PASS" starttime="20240524 20:46:22.440" endtime="20240524 20:46:23.324"/>
+</kw>
+<kw name="Click Element" library="AppiumLibrary">
+<arg>${elemento}</arg>
+<doc>Click element identified by `locator`.</doc>
+<msg timestamp="20240524 20:46:23.325" level="INFO">Clicking element 'xpath=//android.widget.TextView[@text="Test.allTheThings() T-Shirt"]'.</msg>
+<msg timestamp="20240524 20:46:23.481" level="INFO">xpath criteria: //android.widget.TextView[@text="Test.allTheThings() T-Shirt"]</msg>
+<status status="PASS" starttime="20240524 20:46:23.324" endtime="20240524 20:46:23.481"/>
+</kw>
+<status status="PASS" starttime="20240524 20:46:22.439" endtime="20240524 20:46:23.481"/>
+</kw>
+<status status="PASS" starttime="20240524 20:46:21.081" endtime="20240524 20:46:23.481"/>
+</kw>
+<kw name="Quando acrescento um produto no carrinho" library="sauceLabsPage">
+<kw name="Espera o elemento e faz o clique" library="commons">
+<arg>${ADD_CART}</arg>
+<kw name="Wait Until Element Is Visible" library="AppiumLibrary">
+<arg>${elemento}</arg>
+<doc>Waits until element specified with `locator` is visible.</doc>
+<msg timestamp="20240524 20:46:24.508" level="INFO">xpath criteria: //android.view.ViewGroup[@content-desc="Add To Cart button"]
+xpath criteria: //android.view.ViewGroup[@content-desc="Add To Cart button"]</msg>
+<status status="PASS" starttime="20240524 20:46:23.483" endtime="20240524 20:46:24.509"/>
+</kw>
+<kw name="Click Element" library="AppiumLibrary">
+<arg>${elemento}</arg>
+<doc>Click element identified by `locator`.</doc>
+<msg timestamp="20240524 20:46:24.511" level="INFO">Clicking element 'xpath=//android.view.ViewGroup[@content-desc="Add To Cart button"]'.</msg>
+<msg timestamp="20240524 20:46:24.618" level="INFO">xpath criteria: //android.view.ViewGroup[@content-desc="Add To Cart button"]</msg>
+<status status="PASS" starttime="20240524 20:46:24.509" endtime="20240524 20:46:24.619"/>
+</kw>
+<status status="PASS" starttime="20240524 20:46:23.483" endtime="20240524 20:46:24.619"/>
+</kw>
+<kw name="Espera o elemento e faz o clique" library="commons">
+<arg>${CARRINHO}</arg>
+<kw name="Wait Until Element Is Visible" library="AppiumLibrary">
+<arg>${elemento}</arg>
+<doc>Waits until element specified with `locator` is visible.</doc>
+<msg timestamp="20240524 20:46:24.692" level="INFO">xpath criteria: //android.view.ViewGroup[@content-desc="cart badge"]</msg>
+<status status="PASS" starttime="20240524 20:46:24.619" endtime="20240524 20:46:24.692"/>
+</kw>
+<kw name="Click Element" library="AppiumLibrary">
+<arg>${elemento}</arg>
+<doc>Click element identified by `locator`.</doc>
+<msg timestamp="20240524 20:46:24.694" level="INFO">Clicking element 'xpath=//android.view.ViewGroup[@content-desc="cart badge"]'.</msg>
+<msg timestamp="20240524 20:46:25.460" level="INFO">xpath criteria: //android.view.ViewGroup[@content-desc="cart badge"]</msg>
+<status status="PASS" starttime="20240524 20:46:24.693" endtime="20240524 20:46:25.460"/>
+</kw>
+<status status="PASS" starttime="20240524 20:46:24.619" endtime="20240524 20:46:25.461"/>
+</kw>
+<status status="PASS" starttime="20240524 20:46:23.482" endtime="20240524 20:46:25.461"/>
+</kw>
+<kw name="Entao verifico o produto no carrinho" library="sauceLabsPage">
+<kw name="Wait Until Element Is Visible" library="AppiumLibrary">
+<arg>${CARRINHO_TITULO}</arg>
+<doc>Waits until element specified with `locator` is visible.</doc>
+<msg timestamp="20240524 20:46:26.161" level="INFO">xpath criteria: //android.widget.TextView[@text="My Cart"]
+xpath criteria: //android.widget.TextView[@text="My Cart"]</msg>
+<status status="PASS" starttime="20240524 20:46:25.463" endtime="20240524 20:46:26.162"/>
+</kw>
+<kw name="Element Should Contain Text" library="AppiumLibrary">
+<arg>//android.widget.TextView[@content-desc="product label"]</arg>
+<arg>Test.allTheThings() T-Shirt</arg>
+<doc>Verifies element identified by ``locator`` contains text ``expected``.</doc>
+<msg timestamp="20240524 20:46:26.164" level="INFO">Verifying element '//android.widget.TextView[@content-desc="product label"]' contains text 'Test.allTheThings() T-Shirt'.</msg>
+<msg timestamp="20240524 20:46:26.220" level="INFO">xpath criteria: //android.widget.TextView[@content-desc="product label"]</msg>
+<status status="PASS" starttime="20240524 20:46:26.162" endtime="20240524 20:46:26.220"/>
+</kw>
+<kw name="Espera o elemento e faz o clique" library="commons">
+<arg>${PROSSEGUIR_CHECKOUT}</arg>
+<kw name="Wait Until Element Is Visible" library="AppiumLibrary">
+<arg>${elemento}</arg>
+<doc>Waits until element specified with `locator` is visible.</doc>
+<msg timestamp="20240524 20:46:26.293" level="INFO">xpath criteria: //android.widget.TextView[@text="Proceed To Checkout"]</msg>
+<status status="PASS" starttime="20240524 20:46:26.220" endtime="20240524 20:46:26.293"/>
+</kw>
+<kw name="Click Element" library="AppiumLibrary">
+<arg>${elemento}</arg>
+<doc>Click element identified by `locator`.</doc>
+<msg timestamp="20240524 20:46:26.295" level="INFO">Clicking element 'xpath=//android.widget.TextView[@text="Proceed To Checkout"]'.</msg>
+<msg timestamp="20240524 20:46:26.415" level="INFO">xpath criteria: //android.widget.TextView[@text="Proceed To Checkout"]</msg>
+<status status="PASS" starttime="20240524 20:46:26.293" endtime="20240524 20:46:26.415"/>
+</kw>
+<status status="PASS" starttime="20240524 20:46:26.220" endtime="20240524 20:46:26.416"/>
+</kw>
+<kw name="Quando preenche o formulario" library="sauceLabsPage">
+<kw name="Espera o elemento e faz o inputtext" library="commons">
+<arg>${INPUT_TEXT_USERNAME}</arg>
+<arg>bob@example.com</arg>
+<kw name="Wait Until Element Is Visible" library="AppiumLibrary">
+<arg>${elemento}</arg>
+<doc>Waits until element specified with `locator` is visible.</doc>
+<msg timestamp="20240524 20:46:27.555" level="INFO">xpath criteria: //android.widget.EditText[@content-desc="Username input field"]
+xpath criteria: //android.widget.EditText[@content-desc="Username input field"]</msg>
+<status status="PASS" starttime="20240524 20:46:26.418" endtime="20240524 20:46:27.556"/>
+</kw>
+<kw name="Input Text" library="AppiumLibrary">
+<arg>${elemento}</arg>
+<arg>${texto}</arg>
+<doc>Types the given `text` into text field identified by `locator`.</doc>
+<msg timestamp="20240524 20:46:27.557" level="INFO">Typing text 'bob@example.com' into text field 'xpath=//android.widget.EditText[@content-desc="Username input field"]'</msg>
+<msg timestamp="20240524 20:46:27.628" level="INFO">xpath criteria: //android.widget.EditText[@content-desc="Username input field"]</msg>
+<status status="PASS" starttime="20240524 20:46:27.556" endtime="20240524 20:46:27.628"/>
+</kw>
+<status status="PASS" starttime="20240524 20:46:26.417" endtime="20240524 20:46:27.628"/>
+</kw>
+<kw name="Espera o elemento e faz o inputtext" library="commons">
+<arg>${INPUT_TEXT_PASSWORD}</arg>
+<arg>10203040</arg>
+<kw name="Wait Until Element Is Visible" library="AppiumLibrary">
+<arg>${elemento}</arg>
+<doc>Waits until element specified with `locator` is visible.</doc>
+<msg timestamp="20240524 20:46:28.300" level="INFO">xpath criteria: //android.widget.EditText[@content-desc="Password input field"]</msg>
+<status status="PASS" starttime="20240524 20:46:27.630" endtime="20240524 20:46:28.300"/>
+</kw>
+<kw name="Input Text" library="AppiumLibrary">
+<arg>${elemento}</arg>
+<arg>${texto}</arg>
+<doc>Types the given `text` into text field identified by `locator`.</doc>
+<msg timestamp="20240524 20:46:28.303" level="INFO">Typing text '10203040' into text field 'xpath=//android.widget.EditText[@content-desc="Password input field"]'</msg>
+<msg timestamp="20240524 20:46:28.378" level="INFO">xpath criteria: //android.widget.EditText[@content-desc="Password input field"]</msg>
+<status status="PASS" starttime="20240524 20:46:28.301" endtime="20240524 20:46:28.379"/>
+</kw>
+<status status="PASS" starttime="20240524 20:46:27.628" endtime="20240524 20:46:28.379"/>
+</kw>
+<status status="PASS" starttime="20240524 20:46:26.416" endtime="20240524 20:46:28.379"/>
+</kw>
+<kw name="E clica no Login" library="sauceLabsPage">
+<kw name="Espera o elemento e faz o clique" library="commons">
+<arg>${BTN_LOGIN}</arg>
+<kw name="Wait Until Element Is Visible" library="AppiumLibrary">
+<arg>${elemento}</arg>
+<doc>Waits until element specified with `locator` is visible.</doc>
+<msg timestamp="20240524 20:46:29.013" level="INFO">xpath criteria: //android.view.ViewGroup[@content-desc="Login button"]</msg>
+<status status="PASS" starttime="20240524 20:46:28.380" endtime="20240524 20:46:29.013"/>
+</kw>
+<kw name="Click Element" library="AppiumLibrary">
+<arg>${elemento}</arg>
+<doc>Click element identified by `locator`.</doc>
+<msg timestamp="20240524 20:46:29.015" level="INFO">Clicking element 'xpath=//android.view.ViewGroup[@content-desc="Login button"]'.</msg>
+<msg timestamp="20240524 20:46:29.111" level="INFO">xpath criteria: //android.view.ViewGroup[@content-desc="Login button"]</msg>
+<status status="PASS" starttime="20240524 20:46:29.014" endtime="20240524 20:46:29.112"/>
+</kw>
+<status status="PASS" starttime="20240524 20:46:28.380" endtime="20240524 20:46:29.112"/>
+</kw>
+<status status="PASS" starttime="20240524 20:46:28.379" endtime="20240524 20:46:29.112"/>
+</kw>
+<status status="PASS" starttime="20240524 20:46:25.462" endtime="20240524 20:46:29.113"/>
+</kw>
+<kw name="Teardown" library="config" type="TEARDOWN">
+<kw name="Run Keyword If Test Failed" library="BuiltIn">
+<arg>Capture Page Screenshot</arg>
+<doc>Runs the given keyword with the given arguments, if the test failed.</doc>
+<status status="PASS" starttime="20240524 20:46:29.114" endtime="20240524 20:46:29.114"/>
+</kw>
+<kw name="Close All Applications" library="AppiumLibrary">
+<doc>Closes all open applications.</doc>
+<status status="PASS" starttime="20240524 20:46:29.114" endtime="20240524 20:46:29.486"/>
+</kw>
+<status status="PASS" starttime="20240524 20:46:29.113" endtime="20240524 20:46:29.486"/>
+</kw>
+<status status="PASS" starttime="20240524 20:46:15.845" endtime="20240524 20:46:29.486"/>
+</test>
+<status status="PASS" starttime="20240524 20:46:15.617" endtime="20240524 20:46:29.487"/>
+</suite>
+<statistics>
+<total>
+<stat pass="1" fail="0" skip="0">All Tests</stat>
+</total>
+<tag>
+</tag>
+<suite>
+<stat pass="1" fail="0" skip="0" id="s1" name="loginSaucelabsTest">loginSaucelabsTest</stat>
+</suite>
+</statistics>
+<errors>
+</errors>
+</robot>
